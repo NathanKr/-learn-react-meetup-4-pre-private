@@ -2,10 +2,11 @@ import Link from "next/link";
 import React from "react";
 import { POKEMONS_URL } from "../src/constants";
 import IPokemon from "../src/IPokemon";
-import Image from 'next/image'
+import Image from "next/image";
 
-
-export async function getStaticProps() {
+// --- ssr is the same as ssg but use getServerSideProps instead of getStaticProps
+// export async function getStaticProps() {
+export async function getServerSideProps() {
   const response = await fetch(POKEMONS_URL);
   const pokemons: IPokemon[] = await response.json();
 
@@ -14,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-const PokemonsSSG = (props: { pokemons: IPokemon[] }) => {
+const PokemonsSSR = (props: { pokemons: IPokemon[] }) => {
   const { pokemons } = props;
 
   const elems = pokemons.map((pokemon, i) => (
@@ -32,11 +33,10 @@ const PokemonsSSG = (props: { pokemons: IPokemon[] }) => {
       <br />
       <Link href="/">Home</Link>
       <br />
-      <h1>PokemonsSSG page</h1>
+      <h1>PokemonsSSR page</h1>
       {elems}
-
     </div>
   );
 };
 
-export default PokemonsSSG;
+export default PokemonsSSR;
