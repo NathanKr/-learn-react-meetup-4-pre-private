@@ -1,9 +1,10 @@
 import Link from "next/link";
 import React from "react";
-import { POKEMONS_URL } from "../src/constants";
-import IPokemon from "../src/IPokemon";
+import { POKEMONS_URL } from "../../src/constants";
+import IPokemon from "../../src/IPokemon";
 import Image from 'next/image'
 
+// SSG
 
 export async function getStaticProps() {
   const response = await fetch(POKEMONS_URL);
@@ -28,11 +29,14 @@ const PokemonsSSG = (props: { pokemons: IPokemon[] }) => {
     <div>
       <Link href="/about">About</Link>
       <br />
-      <Link href="/pokemons-csr">PokemonsCSR</Link>
-      <br />
       <Link href="/">Home</Link>
       <br />
+      <Link href="/pokemons-csr">PokemonsCSR</Link>
+      <br />
+      <Link href="/pokemons-ssr">PokemonsSSR</Link>
+      <br />
       <h1>PokemonsSSG page</h1>
+      
       {elems}
 
     </div>

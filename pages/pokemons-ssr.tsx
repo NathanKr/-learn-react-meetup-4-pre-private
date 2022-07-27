@@ -4,6 +4,8 @@ import { POKEMONS_URL } from "../src/constants";
 import IPokemon from "../src/IPokemon";
 import Image from "next/image";
 
+// SSR
+
 // --- ssr is the same as ssg but use getServerSideProps instead of getStaticProps
 // export async function getStaticProps() {
 export async function getServerSideProps() {
@@ -29,10 +31,11 @@ const PokemonsSSR = (props: { pokemons: IPokemon[] }) => {
     <div>
       <Link href="/about">About</Link>
       <br />
-      <Link href="/pokemons-csr">PokemonsCSR</Link>
-      <br />
       <Link href="/">Home</Link>
       <br />
+      <Link href="/pokemons-csr">PokemonsCSR</Link>
+      <br />
+      <Link href="/pokemons-ssg">PokemonsSSG</Link>
       <h1>PokemonsSSR page</h1>
       {elems}
     </div>

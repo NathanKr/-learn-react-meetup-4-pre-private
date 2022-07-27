@@ -10,6 +10,8 @@ const About = () => {
       <br />
       <Link href="/pokemons-ssg">PokemonsSSG</Link>
       <br />
+      <Link href="/pokemons-ssr">PokemonsSSR</Link>
+      <br />
       <h1>About Page</h1>
     </div>
   );

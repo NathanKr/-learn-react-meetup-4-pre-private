@@ -11,6 +11,8 @@ const Home: NextPage = () => {
       <br />
       <Link href="/pokemons-ssg">PokemonsSSG</Link>
       <br />
+      <Link href="/pokemons-ssr">PokemonsSSR</Link>
+      <br />
 
       <h1>Home Page</h1>
       <Image

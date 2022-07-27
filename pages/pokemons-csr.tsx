@@ -4,6 +4,8 @@ import { POKEMONS_URL } from "../src/constants";
 import IPokemon from "../src/IPokemon";
 import Image from 'next/image'
 
+// CSR
+
 const PokemonsCSR = () => {
   const [pokemons, setPokemons] = useState<IPokemon []>([]);
   useEffect(getPokemons, []);
@@ -26,6 +28,8 @@ const PokemonsCSR = () => {
       <Link href="/">Home</Link>
       <br />
       <Link href="/pokemons-ssg">PokemonsSSG</Link>
+      <br />
+      <Link href="/pokemons-ssr">PokemonsSSR</Link>
       <br />
       <h1>PokemonsCSR page</h1>
       {elems}
